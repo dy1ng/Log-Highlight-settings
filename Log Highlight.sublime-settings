@@ -1,0 +1,81 @@
+// These settings override both User and Default settings for the Log Highlight syntax
+{
+	// log file extension
+	"log_ext": [ ".log" ], // use ".*" for all file extensions - but can not use `Auto Highlight`
+
+	// severity level
+	"severity" : {
+
+		// error __________________________________________________
+		"error" : {
+			"enable"  : true,
+			"summary" : true,
+			"pattern" : [
+				// [ "begin regex", "end regex" ] or [ "match regex", "" ]
+				[ "^\\[\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\]\\s+?ERROR", "^(?=\\[)" ],
+				[ "^\\[\\d{2}:\\d{2}:\\d{2}\\]E:", "^(?=\\[)"],
+				[ "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?ERROR", "^(?=\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3})" ]
+			],
+			"color" : {
+				"base"  : "#F92672", // error message
+				"link"  : "#E6DB74", // link in error message
+				"quote" : "#4F99D3"  // quote in error message
+			},
+			"icon"  : "Danish Royalty/error.png"   // remove "icon" not to use icon, "dot", "circle" "bookmark" are possible
+		},
+
+		// warning ________________________________________________
+		"warning" : {
+			"enable"  : true,
+			"summary" : true,
+			"pattern" : [
+				// [ "begin regex", "end regex" ] or [ "match regex", "" ]
+				[ "^\\[\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\]\\s+?WARN", "^(?=\\[)" ],
+				[ "^\\[\\d{2}:\\d{2}:\\d{2}\\]W:", "^(?=\\[)"],
+				[ "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?WARN", "^(?=\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3})" ]
+			],
+			"color" : {
+				"base"  : "#A1B347", // warning message
+				"link"  : "#FD971F", // link in warning message
+				"quote" : "#4F99D3"  // quote in warning message
+			},
+			"icon"  : "Danish Royalty/warning.png" // remove "icon" not to use icon, "dot", "circle" "bookmark" are possible
+		},
+
+		// info ___________________________________________________
+		"info" : {
+			"enable"  : false,
+			"summary" : false,
+			"pattern" : [
+				// [ "begin regex", "end regex" ] or [ "match regex", "" ]
+				[ "^\\[\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\]\\s+?INFO", "^(?=\\[)" ],
+				[ "^\\[\\d{2}:\\d{2}:\\d{2}\\][i ]:", "^(?=\\[)"],
+				[ "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?INFO", "^(?=\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3})" ]
+			],
+			"color" : {
+				"base"  : "#70991f", // info message
+				"link"  : "#b36915", // link in info message
+				"quote" : "#428a99"  // quote in info message
+			},
+			"icon"  : "Danish Royalty/info.png"    // remove "icon" not to use icon, "dot", "circle" "bookmark" are possible
+		},
+
+		//idea IDE actions (started, stopped)
+		"idestartstop": {
+			"enable"  : true,
+			"summary" : false,
+			"pattern" : [
+				// [ "begin regex", "end regex" ] or [ "match regex", "" ]
+				[ "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?INFO.*-+\\sIDE SHUTDOWN", "^(?=\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3})" ],
+				[ "^\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3}\\s\\[\\s*\\d+\\]\\s+?INFO.*-+\\sIDE STARTED", "^(?=\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2},\\d{3})" ]
+			],
+			"color" : {
+				"base"  : "#6ffc03",
+				"link"  : "#b36915",
+				"quote" : "#428a99"
+			},
+			"icon"  : "Danish Royalty/info.png"
+		}
+
+	},
+}
